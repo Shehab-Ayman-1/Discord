@@ -1,0 +1,81 @@
+@layer base {
+	.bg-gradient {
+		@apply bg-gradient-to-bl from-white via-slate-100 to-white dark:from-slate-700 dark:via-black dark:to-slate-700;
+	}
+
+	.text-gradient {
+		@apply bg-gradient-to-r from-teal-300 via-teal-900 to-teal-300 bg-clip-text text-transparent;
+	}
+
+	.flex-between {
+		@apply flex items-center justify-between gap-4;
+	}
+
+	.flex-around {
+		@apply flex items-center justify-around gap-4;
+	}
+
+	.flex-center {
+		@apply flex items-center justify-center gap-4;
+	}
+
+	.flex-start {
+		@apply flex items-center justify-start gap-4;
+	}
+
+	.flex-end {
+		@apply flex items-center justify-end gap-4;
+	}
+
+	.border-sp {
+		@apply border border-solid border-teal-500;
+	}
+
+	.dark\:border-sp {
+		@apply dark:border dark:border-solid dark:border-teal-500;
+	}
+
+	.border-t-sp {
+		@apply border-0 border-t border-solid border-teal-500;
+	}
+
+	.border-b-sp {
+		@apply border-0 border-b border-solid border-teal-500;
+	}
+
+	.absolute-top-left {
+		@apply absolute left-0 top-0;
+	}
+
+	.absolute-top-right {
+		@apply absolute right-0 top-0;
+	}
+
+	.absolute-center {
+		@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+	}
+
+	.fixed-top-left {
+		@apply fixed left-0 top-0;
+	}
+
+	.fixed-top-right {
+		@apply fixed right-0 top-0;
+	}
+
+	.fixed-center {
+		@apply fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+	}
+
+	.progress-animate {
+		animation: loading 1.5s ease-in-out;
+		@keyframes loading {
+			0% {
+				width: 0;
+			}
+			100% {
+				width: 100%;
+			}
+		}
+	}
+}
