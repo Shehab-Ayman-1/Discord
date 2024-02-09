@@ -21,7 +21,7 @@ const config = {
             background: "hsl(var(--background))",
             foreground: "hsl(var(--foreground))",
             dimWhite: "rgba(255, 255, 255, 0.7)",
-            dimBlack: "rgba(0, 0, 0, 0.5)",
+            dimBlack: "var(--tw-gray-800)",
             primary: {
                DEFAULT: "hsl(var(--primary))",
                foreground: "hsl(var(--primary-foreground))",

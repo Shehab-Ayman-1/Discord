@@ -1,7 +1,7 @@
 "use client";
 import { useModalStore } from "@/hooks/useModalStore";
 import { ModalContent } from "../modal-content";
-import { ModalForm } from "../modal-form";
+import { ModalCreateForm } from "../modal-create-form";
 import { ModalInfo } from "../modal-info";
 
 type UpdateServerModalProps = {};
@@ -12,7 +12,7 @@ export const UpdateServerModal = ({}: UpdateServerModalProps) => {
    return (
       <ModalContent isOpen={isOpen && type === "editServer"} onClose={onClose}>
          <ModalInfo />
-         <ModalForm
+         <ModalCreateForm
             api={{ url: `/api/servers/${data?.server?.id}`, method: "put" }}
             useOnClose
             useInitialServerData

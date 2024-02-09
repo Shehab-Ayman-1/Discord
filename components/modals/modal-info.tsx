@@ -2,7 +2,7 @@ import { DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/di
 
 type ModalInfoProps = {
    title?: string;
-   description?: string;
+   description?: string | JSX.Element;
 };
 
 export const ModalInfo = ({ title, description }: ModalInfoProps) => {

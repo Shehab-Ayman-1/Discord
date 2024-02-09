@@ -1,4 +1,4 @@
-import { NavigationSidebar } from "./_components/navigation/sidebar";
+import { NavigationSidebar } from "./_components/navigation";
 
 type LayoutProps = {
    children: React.ReactNode;
@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
             <NavigationSidebar />
          </div>
 
-         <main className="ml-[72px] h-full w-full p-2">{children}</main>
+         <main className="ml-[72px] h-full w-full">{children}</main>
       </div>
    );
 };

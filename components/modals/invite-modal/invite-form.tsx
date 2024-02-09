@@ -1,3 +1,4 @@
+"use client";
 import { CheckIcon, CopyIcon, RefreshCwIcon } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
@@ -35,9 +36,13 @@ export const InviteForm = ({}: InviteFormProps) => {
    };
 
    const onGenerateInviteCode = async () => {
-      const { isSubmitted, error } = await execute("get", `/servers/${data.server?.id}/invite-code`);
+      const {
+         data: response,
+         isSubmitted,
+         error,
+      } = await execute("get", `/servers/${data.server?.id}/invite-code`);
       if (isSubmitted && error) return toast.error(error);
-      toast.success(inviteData?.success);
+      toast.success(response?.success);
    };
 
    return (

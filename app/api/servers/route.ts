@@ -5,6 +5,12 @@ import { v4 as uuid } from "uuid";
 import { currentProfile } from "@/utils/current-profile";
 import { prisma } from "@/utils";
 
+type Params = {
+   params: {
+      serverId: string;
+   };
+};
+
 export const POST = async (req: Request) => {
    try {
       const { name, imageUrl } = await req.json();

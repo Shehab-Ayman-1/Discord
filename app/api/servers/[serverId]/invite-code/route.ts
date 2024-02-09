@@ -19,10 +19,7 @@ export const GET = async (req: Request, { params }: ParamsProps) => {
       const inviteCode = uuid();
       await prisma.server.update({ where: { id: serverId }, data: { inviteCode } });
 
-      return NextResponse.json(
-         { data: inviteCode, success: `Invite Code Generated`, status: 200 },
-         { status: 200 },
-      );
+      return NextResponse.json({ data: null, success: `Invite Code Generated`, status: 200 }, { status: 200 });
    } catch (error) {
       console.log(error);
       return NextResponse.json(null, { status: 400 });

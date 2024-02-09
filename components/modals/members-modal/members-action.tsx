@@ -106,7 +106,7 @@ export const MemberAction = ({ role, memberId }: MemberActionProps) => {
 
             <DropdownMenuItem onClick={onKick}>
                <GavelIcon className="mr-2 h-4 w-4" />
-               Kick
+               Kick Out
             </DropdownMenuItem>
          </DropdownMenuContent>
       </DropdownMenu>

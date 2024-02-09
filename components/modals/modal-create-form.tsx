@@ -26,15 +26,14 @@ const schema = z.object({
    imageUrl: z.string().min(1, { message: "Image Is Required" }),
 });
 
-const defaultValues = { name: "", imageUrl: "" };
 export type DataType = z.infer<typeof schema>;
 
-export const ModalForm = ({ api, useOnClose, useInitialServerData }: ModalFormProps) => {
+export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: ModalFormProps) => {
    const { data, onClose } = useModalStore();
    const router = useRouter();
 
    const { register, handleSubmit, setValue, setError, watch, reset, formState } = useForm({
-      defaultValues,
+      defaultValues: { name: "", imageUrl: "" },
       resolver: zodResolver(schema),
    });
 
@@ -77,7 +76,7 @@ export const ModalForm = ({ api, useOnClose, useInitialServerData }: ModalFormPr
          </Label>
 
          <Input
-            className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-dimBlack dark:text-dimWhite"
+            className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-gray-800 dark:text-dimWhite"
             id="server"
             disabled={formState.isSubmitting}
             placeholder="Enter A Server name "
@@ -89,9 +88,9 @@ export const ModalForm = ({ api, useOnClose, useInitialServerData }: ModalFormPr
             {formState.errors.imageUrl?.message && <p className="">{formState.errors.imageUrl?.message}</p>}
          </div>
 
-         <DialogFooter className="bg-gray-100 px-6 py-4 dark:bg-dimBlack">
+         <DialogFooter className="bg-gray-100 px-6 py-4 dark:bg-gray-800">
             <Button variant="primary" type="submit" disabled={formState.isSubmitting}>
-               Create
+               Submit
             </Button>
          </DialogFooter>
       </form>
