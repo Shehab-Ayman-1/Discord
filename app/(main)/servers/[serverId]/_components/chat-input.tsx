@@ -48,9 +48,10 @@ export const ChatInput = ({ type, name, api }: ChatInputProps) => {
 
    const onSubmit = async (values: z.infer<typeof schema>) => {
       try {
-         reset();
          await axios.post(api.url, values);
+         document.querySelector(".bottom-ref")?.scrollIntoView({ behavior: "smooth" });
 
+         reset();
          router.refresh();
       } catch (error) {
          const reason = error as any;

@@ -12,24 +12,20 @@ type ChatScrollProps = {
 export const useChatScroll = ({ bottomRef, chatRef, count, shouldLoadMore, onLoadMore }: ChatScrollProps) => {
    const [hasInitialized, setHasInitialized] = useState(false);
 
+   // Auto Load The Previous Messages
    useEffect(() => {
       const topDiv = chatRef?.current;
 
       const onScroll = () => {
          const scrollTop = topDiv?.scrollTop;
-
-         if (scrollTop === 0 && shouldLoadMore) {
-            onLoadMore();
-         }
+         scrollTop === 0 && shouldLoadMore && onLoadMore();
       };
 
       topDiv?.addEventListener("scroll", onScroll);
-
-      return () => {
-         topDiv?.removeEventListener("scroll", onScroll);
-      };
+      return () => topDiv?.removeEventListener("scroll", onScroll);
    }, [shouldLoadMore, chatRef, onLoadMore]);
 
+   // Auto Scroll To The Bottom
    useEffect(() => {
       const bottomDiv = bottomRef?.current;
       const topDiv = chatRef?.current;

@@ -64,7 +64,7 @@ export const ChatMessages = ({ type, chatId, name, member, api, param }: ChatMes
             ))}
          </div>
 
-         <div ref={bottomRef} />
+         <div className="bottom-ref" ref={bottomRef} />
       </div>
    );
 };
