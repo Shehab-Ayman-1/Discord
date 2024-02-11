@@ -24,7 +24,7 @@ export const DeleteServer = ({}: DeleteServerProps) => {
    return (
       <ModalContent isOpen={isOpen && type === "deleteServer"} onClose={onClose}>
          <ModalInfo title="Delete Server" description={<Description name={data?.server?.name || ""} />} />
-         <ModalDeleteForm api={{ url: `/servers/${data?.server?.id}`, method: "delete" }} />
+         <ModalDeleteForm hardReload api={{ url: `/servers/${data?.server?.id}`, method: "delete" }} />
       </ModalContent>
    );
 };

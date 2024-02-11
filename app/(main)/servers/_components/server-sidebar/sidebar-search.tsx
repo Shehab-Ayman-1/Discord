@@ -4,7 +4,6 @@ import { SearchIcon } from "lucide-react";
 import { useEventListener } from "usehooks-ts";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 import { CommandProps, SearchCommand } from "./search-command";
 
 export type SidebarSearchProps = {
@@ -23,7 +22,7 @@ export const SidebarSearch = ({ data }: SidebarSearchProps) => {
    const ref = useRef<CommandProps>(null);
 
    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "x" && (event.ctrlKey || event.metaKey)) {
+      if (event.key === "x" && (event.altKey || event.metaKey)) {
          ref.current?.onOpenCommand();
       }
    };
@@ -42,7 +41,7 @@ export const SidebarSearch = ({ data }: SidebarSearchProps) => {
                   Search
                </p>
                <kbd className="pointer-events-none ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
-                  <span className="text-xs">CTRL</span>X
+                  <span className="text-xs">ALT</span>X
                </kbd>
             </button>
 

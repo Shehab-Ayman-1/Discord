@@ -16,7 +16,7 @@ export const NavigationAction = ({}: NavigationActionProps) => {
             className="flex-center hover:bg-transparenta group bg-transparent"
             onClick={() => onOpen("createServer")}
          >
-            <div className="flex-center h-12 w-12 overflow-hidden rounded-full bg-background bg-emerald-50 group-hover:rounded-[16px] group-hover:bg-emerald-500 dark:bg-gray-900">
+            <div className="flex-center h-12 w-12 overflow-hidden rounded-full bg-background bg-emerald-50 group-hover:rounded-[16px] group-hover:bg-emerald-500 dark:bg-zinc-900">
                <PlusIcon size={30} className="text-emerald-500 transition group-hover:text-white" />
             </div>
          </Button>

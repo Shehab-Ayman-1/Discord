@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
-import { ModalsProvider, ThemeProvider } from "@/components/providers";
-import { ToastProvider } from "@/components/providers/toast-provider";
+import { Providers } from "@/components/providers";
 import { cn } from "@/utils";
 import "@/public/sass/index.scss";
 
@@ -21,18 +20,9 @@ type LayoutProps = {
 export default async function RootLayout({ children }: LayoutProps) {
    return (
       <ClerkProvider>
-         <html lang="en" className="h-full min-h-screen w-full" suppressHydrationWarning>
+         <html suppressHydrationWarning lang="en" className="h-full min-h-screen w-full">
             <body className={cn("h-full w-full bg-white dark:bg-[#1a1a1a]", font.className)}>
-               <ThemeProvider
-                  storageKey="discord-theme"
-                  attribute="class"
-                  defaultTheme="dark"
-                  enableSystem={false}
-               >
-                  <ToastProvider />
-                  <ModalsProvider />
-                  {children}
-               </ThemeProvider>
+               <Providers>{children}</Providers>
             </body>
          </html>
       </ClerkProvider>

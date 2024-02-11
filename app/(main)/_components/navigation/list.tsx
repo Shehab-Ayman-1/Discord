@@ -9,7 +9,7 @@ type NavigationListProps = {};
 
 export const NavigationList = async ({}: NavigationListProps) => {
    const profile = await currentProfile();
-   if (!profile) return redirectToSignIn()
+   if (!profile) return redirectToSignIn();
 
    const servers = await prisma.server.findMany({ where: { members: { some: { profileId: profile.id } } } });
 

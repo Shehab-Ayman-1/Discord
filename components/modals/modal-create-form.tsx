@@ -76,7 +76,7 @@ export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: Modal
          </Label>
 
          <Input
-            className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-gray-800 dark:text-dimWhite"
+            className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-800 dark:text-dimWhite"
             id="server"
             disabled={formState.isSubmitting}
             placeholder="Enter A Server name "
@@ -88,7 +88,7 @@ export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: Modal
             {formState.errors.imageUrl?.message && <p className="">{formState.errors.imageUrl?.message}</p>}
          </div>
 
-         <DialogFooter className="bg-gray-100 px-6 py-4 dark:bg-gray-800">
+         <DialogFooter className="bg-zinc-100 px-6 py-4 dark:bg-zinc-800">
             <Button variant="primary" type="submit" disabled={formState.isSubmitting}>
                Submit
             </Button>

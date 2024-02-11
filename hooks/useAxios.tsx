@@ -23,7 +23,6 @@ export const useAxios = <Data,>(method?: Method, url?: string, body?: object, op
          else response = await axios[method](`/api/${url}`, body, options);
 
          setData(response.data);
-
          return { data: response.data, error, isSubmitted: true, loading: false };
       } catch (reason) {
          const error = reason as AxiosError;
@@ -31,7 +30,6 @@ export const useAxios = <Data,>(method?: Method, url?: string, body?: object, op
             (error?.response?.data as any).error || error?.response?.data || error?.message || "Network Error";
 
          setError(err);
-
          console.log(error);
          return { data: undefined, loading: false, error: err, isSubmitted: true };
       } finally {

@@ -4,11 +4,13 @@ import { create } from "zustand";
 
 export type ModalType =
    | "createServer"
-   | "editServer"
-   | "deleteServer"
    | "createChannel"
+   | "editServer"
    | "editChannel"
+   | "deleteServer"
    | "deleteChannel"
+   | "deleteMessage"
+   | "messageAttachments"
    | "leaveServer"
    | "invite"
    | "members";
@@ -17,6 +19,10 @@ type ModalData = {
    server?: ServerWithMembersWithProfiles;
    channel?: Channel;
    channelType?: CHANNEL;
+   api?: {
+      url?: string;
+      method?: "get" | "post" | "put" | "delete";
+   };
 };
 
 type ModalStoreProps = {

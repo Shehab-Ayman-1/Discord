@@ -7,16 +7,19 @@ import { Json } from "@uploadthing/shared";
 
 import { UploadDropzone } from "@/utils";
 import Image from "next/image";
+import { FileIcon, XIcon } from "lucide-react";
 
 type FileUploadProps = {
-   endpoint: "uploadFile" | "uploadImage";
+   endpoint: "uploadImage" | "uploadAttachment";
    initialValue?: string;
+   value?: string;
    setValue: UseFormSetValue<any>;
    setError: UseFormSetError<any>;
 };
 
-export const FileUpload = ({ endpoint, initialValue, setValue, setError }: FileUploadProps) => {
+export const FileUpload = ({ endpoint, value, initialValue, setValue, setError }: FileUploadProps) => {
    const [image, setImage] = useState(initialValue);
+   const [pdf, setPdf] = useState("");
 
    useEffect(() => {
       setImage(initialValue || "");
@@ -27,18 +30,44 @@ export const FileUpload = ({ endpoint, initialValue, setValue, setError }: FileU
    };
 
    const onCompleted = (data: UploadFileResponse<null>[]) => {
-      if (!data?.[0].url) return setError("imageUrl", { message: "Faild To Uplaod The Image" });
+      const val = data?.[0].url;
+      if (!val) return setError(value || "imageUrl", { message: "Faild To Uplaod The Attachment" });
 
-      setImage(data[0].url);
-      setValue("imageUrl", data[0].url);
-      setError("imageUrl", { message: undefined });
+      const ext = val.split(".").pop();
+      ext === "pdf" ? setPdf(val) : setImage(val);
+
+      setValue(value || "imageUrl", val);
+      setError(value || "imageUrl", { message: undefined });
    };
 
    const onReset = () => {
       setImage("");
-      setValue("imageUrl", "");
-      setError("imageUrl", { message: undefined });
+      setValue(value || "imageUrl", "");
+      setError(value || "imageUrl", { message: undefined });
    };
+
+   if (pdf) {
+      return (
+         <div className="flex-start relative mt-2 rounded-md bg-rose-100 p-2">
+            <FileIcon className="h-10 w-10 fill-indigo-200" />
+            <a
+               href={pdf}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="ml-2 text-sm text-indigo-500 hover:underline dark:text-indigo-400"
+            >
+               {pdf}
+            </a>
+            <button
+               type="button"
+               className="absolute -right-2 -top-2 rounded-full bg-rose-500 p-0.5 text-white shadow-sm"
+               onClick={onReset}
+            >
+               <XIcon className="h-4 w-4" />
+            </button>
+         </div>
+      );
+   }
 
    if (image)
       return (

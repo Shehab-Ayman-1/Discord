@@ -42,7 +42,7 @@ export const ModalForm = ({}: ModalFormProps) => {
    const onSubmit = async (values: DataType) => {
       try {
          const response = await axios.post(
-            `/api/channels/${data?.channel?.id}?serverId=${params.serverId}`,
+            `/api/channels/${data?.channel?.id}?serverId=${params?.serverId}`,
             values,
          );
          router.refresh();
@@ -68,7 +68,7 @@ export const ModalForm = ({}: ModalFormProps) => {
             </Label>
 
             <Input
-               className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-gray-800 dark:text-dimWhite"
+               className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-800 dark:text-dimWhite"
                id="channel"
                disabled={formState.isSubmitting}
                placeholder="Enter A Channel name"
@@ -87,7 +87,7 @@ export const ModalForm = ({}: ModalFormProps) => {
                value={type}
                {...register("type")}
             >
-               <SelectTrigger className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-gray-800 dark:text-dimWhite">
+               <SelectTrigger className="border-0 bg-zinc-300/50 text-black focus-visible:ring-0 focus-visible:ring-offset-0 dark:bg-zinc-800 dark:text-dimWhite">
                   <SelectValue placeholder="Select A Channel Type" />
                </SelectTrigger>
 
@@ -105,7 +105,7 @@ export const ModalForm = ({}: ModalFormProps) => {
             {formState.errors.name?.message && <p className="">{formState.errors.name?.message}</p>}
          </div>
 
-         <DialogFooter className="bg-gray-100 px-6 py-4 dark:bg-gray-800">
+         <DialogFooter className="bg-zinc-100 px-6 py-4 dark:bg-zinc-800">
             <Button variant="primary" type="submit" disabled={formState.isSubmitting}>
                Submit
             </Button>

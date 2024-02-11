@@ -12,6 +12,8 @@ import { LeaveServer } from "@/components/modals/leave-server-modal";
 import { DeleteServer } from "@/components/modals/delete-server-modal";
 import { DeleteChannel } from "@/components/modals/delete-channel-modal";
 import { UpdateChannelModal } from "@/components/modals/update-channel-modal";
+import { MessageAttachments } from "@/components/modals/message-attachments-modal";
+import { DeleteMessageModal } from "@/components/modals/delete-message-modal";
 
 type ModalsProviderProps = {};
 
@@ -37,6 +39,8 @@ export const ModalsProvider = ({}: ModalsProviderProps) => {
          <DeleteServer />
          <DeleteChannel />
          <UpdateChannelModal />
+         <MessageAttachments />
+         <DeleteMessageModal />
       </Fragment>
    );
 };

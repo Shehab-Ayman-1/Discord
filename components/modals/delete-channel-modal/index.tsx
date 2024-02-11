@@ -27,7 +27,8 @@ export const DeleteChannel = ({}: DeleteServerProps) => {
       <ModalContent isOpen={isOpen && type === "deleteChannel"} onClose={onClose}>
          <ModalInfo title="Delete Channel" description={<Description name={data?.channel?.name || ""} />} />
          <ModalDeleteForm
-            api={{ url: `/channels/${data?.channel?.id}?serverId=${params.serverId}`, method: "delete" }}
+            hardReload
+            api={{ url: `/channels/${data?.channel?.id}?serverId=${params?.serverId}`, method: "delete" }}
          />
       </ModalContent>
    );

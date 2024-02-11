@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
             <NavigationSidebar />
          </div>
 
-         <main className="ml-[72px] h-full w-full">{children}</main>
+         <main className="h-full w-full md:ml-[72px]">{children}</main>
       </div>
    );
 };

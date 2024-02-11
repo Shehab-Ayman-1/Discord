@@ -28,7 +28,7 @@ const Layout = async ({ children, params }: LayoutProps) => {
          <div className="fixed inset-y-0 z-20 hidden h-full w-60 flex-col md:flex">
             <ServerSidebar serverId={params.serverId} />
          </div>
-         <main className="h-full md:ml-64">{children}</main>
+         <main className="h-full md:ml-60">{children}</main>
       </div>
    );
 };

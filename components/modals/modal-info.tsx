@@ -8,7 +8,7 @@ type ModalInfoProps = {
 export const ModalInfo = ({ title, description }: ModalInfoProps) => {
    return (
       <DialogHeader className="px-6 pt-8">
-         <DialogTitle className="text-center text-xl font-bold dark:text-white">
+         <DialogTitle className="text-center text-2xl font-bold dark:text-white">
             {title || "Customize Your Server"}
          </DialogTitle>
 
