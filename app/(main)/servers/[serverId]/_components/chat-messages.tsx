@@ -5,9 +5,9 @@ import { Loader2Icon, ServerCrashIcon } from "lucide-react";
 import { Fragment, useRef } from "react";
 import { format } from "date-fns";
 
-import { useChatSocket } from "@/hooks/use-chat-socket";
+import { useChatSocket } from "@/hooks/useChatSocket";
 import { useChatScroll } from "@/hooks/useChatScroll";
-import { useChatQuery } from "@/hooks/use-chat-query";
+import { useChatQuery } from "@/hooks/useChatQuery";
 import { Button } from "@/components/ui/button";
 import { ChatWelcome } from "./chat-welcome";
 import { ChatMessage } from "./chat-message";
