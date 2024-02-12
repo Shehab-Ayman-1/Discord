@@ -1,11 +1,11 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import { Server } from "@prisma/client";
+import Image from "next/image";
 
 import { ActionTooltip } from "@/components/action-tooltip";
 import { Button } from "@/components/ui/button";
-import { cn, prisma } from "@/utils";
-import Image from "next/image";
+import { cn } from "@/utils";
 
 type NavigationItemProps = {
    server: Server;

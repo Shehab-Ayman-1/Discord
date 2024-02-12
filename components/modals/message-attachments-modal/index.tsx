@@ -4,9 +4,9 @@ import { ModalContent } from "../modal-content";
 import { ModalInfo } from "../modal-info";
 import { ModalForm } from "./modal-form";
 
-type SetupModalProps = {};
+type MessageAttachmentsProps = {};
 
-export const MessageAttachments = ({}: SetupModalProps) => {
+export const MessageAttachments = ({}: MessageAttachmentsProps) => {
    const { type, isOpen, onClose } = useModalStore();
 
    return (

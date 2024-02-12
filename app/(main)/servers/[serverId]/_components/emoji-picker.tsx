@@ -1,13 +1,12 @@
 "use client";
 import { SmileIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Ref } from "react";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
-import { Ref } from "react";
 import { ActionTooltip } from "@/components/action-tooltip";
-import { Button } from "@/components/ui/button";
 
 type EmojiPickerProps = {
    onChange: (value: string) => void;

@@ -6,7 +6,6 @@ type MembersListProps = {};
 
 export const MembersList = ({}: MembersListProps) => {
    const { data } = useModalStore();
-
    if (!data.server) return;
 
    return data.server.members?.map((member) => (

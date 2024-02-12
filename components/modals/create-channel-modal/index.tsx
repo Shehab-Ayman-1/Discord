@@ -15,7 +15,7 @@ export const CreateChannelModal = ({}: CreateChannelModalProps) => {
    return (
       <ModalContent isOpen={isOpen && type === "createChannel"} onClose={onClose}>
          <ModalInfo title="Create Channel" description=" " />
-         <ModalForm api={{ url: `/api/channels?serverId=${params.serverId}`, method: "post" }} />
+         <ModalForm api={{ url: `/api/channels?serverId=${params?.serverId}`, method: "post" }} />
       </ModalContent>
    );
 };

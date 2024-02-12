@@ -2,9 +2,7 @@
 import { LiveKitRoom, VideoConference } from "@livekit/components-react";
 import { useState, useEffect } from "react";
 import { Loader2Icon } from "lucide-react";
-import { Channel } from "@prisma/client";
 import { useUser } from "@clerk/nextjs";
-import axios from "axios";
 
 type MediaRoomProps = {
    chatId: string;

@@ -6,7 +6,7 @@ import { DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useAxios } from "@/hooks/useAxios";
 
-type InviteFormProps = {
+type ModalDeleteProps = {
    hardReload?: boolean;
    api: {
       url?: string;
@@ -14,14 +14,14 @@ type InviteFormProps = {
    };
 };
 
-type InviteDataProps = {
+type ModalDeleteResponse = {
    data?: string;
    success?: string;
    error?: string;
 };
 
-export const ModalDeleteForm = ({ api, hardReload }: InviteFormProps) => {
-   const { loading, execute } = useAxios<InviteDataProps | undefined>();
+export const ModalDeleteForm = ({ api, hardReload }: ModalDeleteProps) => {
+   const { loading, execute } = useAxios<ModalDeleteResponse | undefined>();
    const { onClose } = useModalStore();
 
    const onConfirm = async () => {

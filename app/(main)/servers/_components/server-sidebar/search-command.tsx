@@ -1,10 +1,10 @@
 "use client";
+import type { SidebarSearchProps } from "./sidebar-search";
 import { Ref, useImperativeHandle, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 
 import { CommandDialog, CommandEmpty, CommandGroup } from "@/components/ui/command";
 import { CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import type { SidebarSearchProps } from "./sidebar-search";
 
 export type CommandProps = {
    onOpenCommand: () => void;

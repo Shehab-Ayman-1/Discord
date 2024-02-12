@@ -31,7 +31,7 @@ export const ModalForm = ({}: ModalFormProps) => {
       try {
          const url = data?.api?.url || "";
          const method = data?.api?.method || "post";
-         const response = await axios[method](url, { ...values, content: "attachment" });
+         await axios[method](url, { ...values, content: "attachment" });
 
          reset();
          onClose();

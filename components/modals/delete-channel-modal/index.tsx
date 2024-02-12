@@ -7,7 +7,7 @@ import { ModalDeleteForm } from "../modal-delete-form";
 import { ModalContent } from "../modal-content";
 import { ModalInfo } from "../modal-info";
 
-type DeleteServerProps = {};
+type DeleteChannelProps = {};
 
 const Description = ({ name }: { name: string }) => {
    return (
@@ -19,7 +19,7 @@ const Description = ({ name }: { name: string }) => {
    );
 };
 
-export const DeleteChannel = ({}: DeleteServerProps) => {
+export const DeleteChannel = ({}: DeleteChannelProps) => {
    const { type, data, isOpen, onClose } = useModalStore();
    const params = useParams();
 

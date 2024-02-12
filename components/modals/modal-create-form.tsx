@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/utils";
 
-type ModalFormProps = {
+type ModalCreateFormProps = {
    api: { url: string; method: "get" | "post" | "put" | "delete" };
    useOnClose?: boolean;
    useInitialServerData?: boolean;
@@ -28,7 +28,7 @@ const schema = z.object({
 
 export type DataType = z.infer<typeof schema>;
 
-export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: ModalFormProps) => {
+export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: ModalCreateFormProps) => {
    const { data, onClose } = useModalStore();
    const router = useRouter();
 

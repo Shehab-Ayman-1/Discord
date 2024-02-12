@@ -6,9 +6,9 @@ import { ModalContent } from "../modal-content";
 import { ModalInfo } from "../modal-info";
 import { ModalForm } from "../create-channel-modal/modal-form";
 
-type CreateChannelModalProps = {};
+type UpdateChannelModalProps = {};
 
-export const UpdateChannelModal = ({}: CreateChannelModalProps) => {
+export const UpdateChannelModal = ({}: UpdateChannelModalProps) => {
    const { type, data, isOpen, onClose } = useModalStore();
    const params = useParams();
 
@@ -16,7 +16,7 @@ export const UpdateChannelModal = ({}: CreateChannelModalProps) => {
       <ModalContent isOpen={isOpen && type === "editChannel"} onClose={onClose}>
          <ModalInfo title="Update Channel" description=" " />
          <ModalForm
-            api={{ url: `/api/channels/${data?.channel?.id}?serverId=${params.serverId}`, method: "put" }}
+            api={{ url: `/api/channels/${data?.channel?.id}?serverId=${params?.serverId}`, method: "put" }}
          />
       </ModalContent>
    );

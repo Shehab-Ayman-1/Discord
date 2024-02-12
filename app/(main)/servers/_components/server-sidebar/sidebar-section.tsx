@@ -1,6 +1,6 @@
 "use client";
 import type { ServerWithMembersWithProfiles } from "@/types";
-import { CHANNEL, Channel, MEMBER } from "@prisma/client";
+import { CHANNEL, MEMBER } from "@prisma/client";
 import { PlusIcon, SettingsIcon } from "lucide-react";
 
 import { ActionTooltip } from "@/components/action-tooltip";

@@ -6,16 +6,16 @@ import { DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useAxios } from "@/hooks/useAxios";
 
-type InviteFormProps = {};
+type ModalFormProps = {};
 
-type InviteDataProps = {
+type ModalFormResponse = {
    data?: string;
    success?: string;
    error?: string;
 };
 
-export const ModalForm = ({}: InviteFormProps) => {
-   const { loading, execute } = useAxios<InviteDataProps | undefined>();
+export const ModalForm = ({}: ModalFormProps) => {
+   const { loading, execute } = useAxios<ModalFormResponse | undefined>();
    const { data, onClose } = useModalStore();
 
    const onConfirm = async () => {
