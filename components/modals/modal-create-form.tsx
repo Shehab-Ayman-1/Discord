@@ -44,7 +44,7 @@ export const ModalCreateForm = ({ api, useOnClose, useInitialServerData }: Modal
       if (!useInitialServerData || !data?.server) return;
       setValue("name", data.server.name);
       setValue("imageUrl", data.server.imageUrl);
-   }, [data?.server]);
+   }, [data?.server, setValue]);
 
    const onSubmit = async (values: DataType) => {
       try {

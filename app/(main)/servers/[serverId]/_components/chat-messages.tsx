@@ -69,6 +69,8 @@ export const ChatMessages = ({ type, chatId, name, member, api, param }: ChatMes
    );
 };
 
+ChatMessages.displayName = "Chat Messages";
+
 ChatMessages.Pending = function Pending() {
    return (
       <div className="flex-center flex flex-1 flex-col">

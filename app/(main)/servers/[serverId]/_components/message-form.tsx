@@ -55,3 +55,5 @@ export const MessageForm = memo(({ content, apiUrl, onEditing }: MessageFormProp
       </form>
    );
 });
+
+MessageForm.displayName = "MessageForm";

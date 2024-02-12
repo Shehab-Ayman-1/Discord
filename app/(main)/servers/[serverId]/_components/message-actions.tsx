@@ -41,3 +41,5 @@ export const MessageActions = memo(({ canEditMessage, isOwner, apiUrl, onEditing
       </div>
    );
 });
+
+MessageActions.displayName = "MessageActions";
