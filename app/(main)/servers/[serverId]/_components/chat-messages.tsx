@@ -58,7 +58,7 @@ export const ChatMessages = ({ type, chatId, name, member, api, param }: ChatMes
             {data?.pages?.map((group, i) => (
                <Fragment key={i}>
                   {group?.messages.map((message: MessageWithMemberWithProfile) => (
-                     <ChatMessages.Message message={message} api={api} member={member} />
+                     <ChatMessages.Message key={message.id} message={message} api={api} member={member} />
                   ))}
                </Fragment>
             ))}
