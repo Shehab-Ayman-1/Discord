@@ -22,7 +22,7 @@ type DataProps = {
 export const SearchCommand = ({ commandRef, data }: SearchCommandProps) => {
    const [open, setOpen] = useState(false);
    const router = useRouter();
-   const { serverId } = useParams();
+   const params = useParams();
 
    const onOpenCommand = () => {
       setOpen(!open);
@@ -30,8 +30,8 @@ export const SearchCommand = ({ commandRef, data }: SearchCommandProps) => {
 
    const onClick = ({ id, type }: DataProps) => {
       setOpen(false);
-      if (type === "member") return router.push(`/servers/${serverId}/conversations/${id}`);
-      if (type === "channel") return router.push(`/servers/${serverId}/channels/${id}`);
+      if (type === "member") return router.push(`/servers/${params?.serverId}/conversations/${id}`);
+      if (type === "channel") return router.push(`/servers/${params?.serverId}/channels/${id}`);
    };
 
    useImperativeHandle(commandRef, () => ({ onOpenCommand }));
